@@ -2,116 +2,345 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hassi | Portfolio</title>
-<style>
-*{box-sizing:border-box}
-body{
-  margin:0;
-  font-family:Arial,sans-serif;
-  background:#0f172a;
-  color:white;
-  text-align:center;
-}
-header{
-  padding:20px;
-  background:#111c32;
-  color:#38bdf8;
-  font-size:22px;
-  font-weight:bold;
-}
-.hero{padding:65px 20px}
-.avatar{
-  width:100px;height:100px;
-  margin:auto;
-  display:grid;place-items:center;
-  border-radius:50%;
-  background:#1e3a5f;
-  border:3px solid #38bdf8;
-  font-size:42px;
-}
-h1{font-size:40px;margin-bottom:5px}
-h2{color:#38bdf8}
-p{color:#cbd5e1;line-height:1.7}
-section{
-  max-width:600px;
-  margin:20px auto;
-  padding:20px;
-}
-.card{
-  background:#1e293b;
-  padding:24px;
-  border-radius:14px;
-  border:1px solid #334155;
-}
-.skill{
-  display:inline-block;
-  background:#164e63;
-  padding:8px 12px;
-  margin:5px;
-  border-radius:7px;
-}
-button{
-  background:#38bdf8;
-  border:0;
-  padding:13px 22px;
-  border-radius:8px;
-  font-weight:bold;
-  cursor:pointer;
-}
-footer{padding:25px;color:#94a3b8}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080b18">
+  <meta name="description" content="Hassaan's personal portfolio website">
+  <title>Hassaan | My Portfolio</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 85px;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #080b18;
+      color: #f4f5ff;
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(8, 11, 24, 0.94);
+      border-bottom: 1px solid #252943;
+      padding: 16px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 23px;
+      font-weight: bold;
+      color: #8b9cff;
+    }
+
+    nav {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #c7cbe0;
+      font-size: 13px;
+    }
+
+    nav a:hover {
+      color: #8b9cff;
+    }
+
+    .container {
+      width: 88%;
+      max-width: 1050px;
+      margin: auto;
+    }
+
+    .hero {
+      min-height: 82vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 75px 0;
+    }
+
+    .tag {
+      color: #aab5ff;
+      border: 1px solid #414a82;
+      background: #141a35;
+      border-radius: 30px;
+      padding: 6px 14px;
+      font-size: 13px;
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      font-size: clamp(40px, 9vw, 68px);
+      line-height: 1.15;
+      margin-bottom: 20px;
+      letter-spacing: -2px;
+    }
+
+    .gradient {
+      background: linear-gradient(90deg, #8b9cff, #d29cff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero p {
+      color: #aeb4cc;
+      max-width: 600px;
+      margin-bottom: 28px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: linear-gradient(100deg, #7186ff, #a777f5);
+      color: white;
+      padding: 12px 22px;
+      border-radius: 10px;
+      font-weight: bold;
+      transition: 0.25s;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 28px #7186ff35;
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 1px solid #555d86;
+      margin-left: 10px;
+    }
+
+    section {
+      padding: 70px 0;
+    }
+
+    .section-title {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .section-desc {
+      color: #aeb4cc;
+      margin-bottom: 30px;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(
+        auto-fit, minmax(220px, 1fr)
+      );
+      gap: 18px;
+    }
+
+    .card {
+      background: #11162a;
+      border: 1px solid #252d4a;
+      border-radius: 16px;
+      padding: 25px;
+      transition: 0.25s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: #818fff;
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      color: #d4d9ff;
+    }
+
+    .card p {
+      color: #aeb4cc;
+      font-size: 14px;
+    }
+
+    .contact-card {
+      background: linear-gradient(135deg, #171e39, #17112d);
+      border: 1px solid #343b67;
+      border-radius: 18px;
+      padding: 30px;
+    }
+
+    footer {
+      text-align: center;
+      border-top: 1px solid #252943;
+      padding: 25px 6%;
+      color: #9299b4;
+      font-size: 13px;
+    }
+
+    @media (max-width: 480px) {
+      header {
+        padding: 14px 5%;
+      }
+
+      nav {
+        gap: 11px;
+      }
+
+      nav a {
+        font-size: 12px;
+      }
+
+      .container {
+        width: 90%;
+      }
+
+      .btn {
+        padding: 11px 15px;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<header>HASSI.DEV</header>
+  <header>
+    <a class="logo" href="#home">HASSAAN.</a>
 
-<div class="hero">
-  <div class="avatar">H</div>
-  <p>HELLO, I'M</p>
-  <h1>Hassi</h1>
-  <h2>Future Web Developer</h2>
-  <p>DIT Student | Tech Enthusiast</p>
-  <a href="#about"><button>Explore My Website</button></a>
-</div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-<section id="about">
-  <div class="card">
-    <h2>About Me</h2>
-    <p>Hi! I'm Hassi, a Diploma in Information Technology
-    student. I'm learning web development and creating
-    my first personal portfolio.</p>
-  </div>
-</section>
+  <main>
+    <div class="container">
 
-<section>
-  <div class="card">
-    <h2>My Skills</h2>
-    <span class="skill">HTML</span>
-    <span class="skill">CSS</span>
-    <span class="skill">Computer Basics</span>
-    <span class="skill">Learning JavaScript</span>
-  </div>
-</section>
+      <section class="hero" id="home">
+        <span class="tag">Welcome to my portfolio</span>
 
-<section>
-  <div class="card">
-    <h2>My Interests</h2>
-    <p>Technology, coding, anime and gaming.</p>
-    <button onclick="hello()">Say Hello 👋</button>
-    <p id="message"></p>
-  </div>
-</section>
+        <h1>
+          Hi, I'm <span class="gradient">Hassaan</span><br>
+          Future IT Professional.
+        </h1>
 
-<footer>Made with ❤️ by Hassi · 2026</footer>
+        <p>
+          I'm beginning my journey into technology and programming.
+          This is my personal space where I share my journey,
+          ideas and the projects I build along the way.
+        </p>
 
-<script>
-function hello(){
-  document.getElementById("message").textContent =
-  "Thanks for visiting my website!";
-}
-</script>
+        <div>
+          <a class="btn" href="#projects">Explore My Work ↗</a>
+          <a class="btn btn-outline" href="#contact">Contact Me</a>
+        </div>
+      </section>
+
+      <section id="about">
+        <h2 class="section-title">
+          About Me<span class="gradient">.</span>
+        </h2>
+
+        <p class="section-desc">
+          A little introduction about myself.
+        </p>
+
+        <div class="card">
+          <h3>Who am I?</h3>
+          <p>
+            Hello! I'm Hassaan, an IT student and beginner
+            exploring the world of technology. I'm starting
+            from the basics and working towards building
+            useful and creative projects. This website is
+            the beginning of my journey into web development.
+          </p>
+        </div>
+      </section>
+
+      <section id="projects">
+        <h2 class="section-title">
+          My Projects<span class="gradient">.</span>
+        </h2>
+
+        <p class="section-desc">
+          My work and things I'm building.
+        </p>
+
+        <div class="card-grid">
+
+          <article class="card">
+            <h3>01. My Portfolio</h3>
+            <p>
+              My first personal website, created to introduce
+              myself and begin my journey into web development.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>02. Learning Journey</h3>
+            <p>
+              I'm exploring programming and technology,
+              learning new concepts and developing my
+              understanding step by step.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>03. Coming Soon</h3>
+            <p>
+              More projects and creative ideas will appear
+              here as my journey continues.
+            </p>
+          </article>
+
+        </div>
+      </section>
+
+      <section id="contact">
+        <h2 class="section-title">
+          Let's Connect<span class="gradient">.</span>
+        </h2>
+
+        <div class="contact-card">
+          <h3>Have a project idea?</h3>
+
+          <p class="section-desc">
+            I'm at the beginning of my journey and excited
+            to explore new ideas and opportunities.
+          </p>
+
+          <!-- Replace this with your real email address -->
+          <a class="btn"
+             href="mailto:YOUR_EMAIL@example.com">
+            Email Me ↗
+          </a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer>
+    © 2026 Hassaan. Built with curiosity and code.
+  </footer>
 
 </body>
 </html>
+
