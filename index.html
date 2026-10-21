@@ -1,346 +1,419 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#080b18">
-  <meta name="description" content="Hassaan's personal portfolio website">
-  <title>Hassaan | My Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#05090c">
+<meta name="description" content="PUBG AK UC and 8 Ball Pool gaming hub by Hassi.">
+<title>PUBG AK UC | HASSI GAMING</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 85px;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-      background: #080b18;
-      color: #f4f5ff;
-      line-height: 1.7;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: rgba(8, 11, 24, 0.94);
-      border-bottom: 1px solid #252943;
-      padding: 16px 6%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 15px;
-      flex-wrap: wrap;
-    }
-
-    .logo {
-      font-size: 23px;
-      font-weight: bold;
-      color: #8b9cff;
-    }
-
-    nav {
-      display: flex;
-      gap: 15px;
-      flex-wrap: wrap;
-    }
-
-    nav a {
-      color: #c7cbe0;
-      font-size: 13px;
-    }
-
-    nav a:hover {
-      color: #8b9cff;
-    }
-
-    .container {
-      width: 88%;
-      max-width: 1050px;
-      margin: auto;
-    }
-
-    .hero {
-      min-height: 82vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-      padding: 75px 0;
-    }
-
-    .tag {
-      color: #aab5ff;
-      border: 1px solid #414a82;
-      background: #141a35;
-      border-radius: 30px;
-      padding: 6px 14px;
-      font-size: 13px;
-      margin-bottom: 24px;
-    }
-
-    h1 {
-      font-size: clamp(40px, 9vw, 68px);
-      line-height: 1.15;
-      margin-bottom: 20px;
-      letter-spacing: -2px;
-    }
-
-    .gradient {
-      background: linear-gradient(90deg, #8b9cff, #d29cff);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-
-    .hero p {
-      color: #aeb4cc;
-      max-width: 600px;
-      margin-bottom: 28px;
-    }
-
-    .btn {
-      display: inline-block;
-      background: linear-gradient(100deg, #7186ff, #a777f5);
-      color: white;
-      padding: 12px 22px;
-      border-radius: 10px;
-      font-weight: bold;
-      transition: 0.25s;
-    }
-
-    .btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 28px #7186ff35;
-    }
-
-    .btn-outline {
-      background: transparent;
-      border: 1px solid #555d86;
-      margin-left: 10px;
-    }
-
-    section {
-      padding: 70px 0;
-    }
-
-    .section-title {
-      font-size: 32px;
-      margin-bottom: 10px;
-    }
-
-    .section-desc {
-      color: #aeb4cc;
-      margin-bottom: 30px;
-    }
-
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(
-        auto-fit, minmax(220px, 1fr)
-      );
-      gap: 18px;
-    }
-
-    .card {
-      background: #11162a;
-      border: 1px solid #252d4a;
-      border-radius: 16px;
-      padding: 25px;
-      transition: 0.25s;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      border-color: #818fff;
-    }
-
-    .card h3 {
-      margin-bottom: 10px;
-      color: #d4d9ff;
-    }
-
-    .card p {
-      color: #aeb4cc;
-      font-size: 14px;
-    }
-
-    .contact-card {
-      background: linear-gradient(135deg, #171e39, #17112d);
-      border: 1px solid #343b67;
-      border-radius: 18px;
-      padding: 30px;
-    }
-
-    footer {
-      text-align: center;
-      border-top: 1px solid #252943;
-      padding: 25px 6%;
-      color: #9299b4;
-      font-size: 13px;
-    }
-
-    @media (max-width: 480px) {
-      header {
-        padding: 14px 5%;
-      }
-
-      nav {
-        gap: 11px;
-      }
-
-      nav a {
-        font-size: 12px;
-      }
-
-      .container {
-        width: 90%;
-      }
-
-      .btn {
-        padding: 11px 15px;
-      }
-    }
-  </style>
+<style>
+:root {
+  --bg:#05090c;
+  --panel:#08131b;
+  --green:#53ff54;
+  --blue:#00c8ff;
+  --gold:#ffbc32;
+  --text:#f3f8ff;
+  --muted:#a6b8c7;
+}
+* { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior:smooth; }
+body {
+  background:var(--bg);
+  color:var(--text);
+  font-family:Arial,Helvetica,sans-serif;
+  line-height:1.55;
+}
+a { color:inherit; text-decoration:none; }
+button,a { -webkit-tap-highlight-color:transparent; }
+header {
+  position:sticky; top:0; z-index:20;
+  display:flex; justify-content:space-between;
+  align-items:center; gap:15px; flex-wrap:wrap;
+  padding:15px 4%;
+  background:#04090df5;
+  border-bottom:1px solid #15513b;
+}
+.logo {
+  font-size:clamp(19px,3vw,27px);
+  font-weight:1000; font-style:italic;
+  letter-spacing:-1px;
+}
+.logo .green { color:var(--green); }
+.logo .blue { color:var(--blue); }
+nav { display:flex; flex-wrap:wrap; gap:17px; font-size:13px; }
+nav a:hover { color:var(--green); }
+.btn {
+  display:inline-block; text-align:center;
+  padding:12px 18px; border-radius:30px;
+  background:var(--green); color:#061008;
+  font-size:13px; font-weight:900;
+  border:1px solid var(--green);
+  box-shadow:0 0 16px #53ff5433;
+  transition:.2s;
+}
+.btn:hover { transform:translateY(-3px); }
+.btn.blue-btn {
+  background:var(--blue); border-color:var(--blue);
+  color:#001017; box-shadow:0 0 16px #00c8ff33;
+}
+.hero {
+  position:relative; overflow:hidden;
+  padding:65px 5%;
+  background:
+    radial-gradient(ellipse at 80% 35%,#124b6c 0,transparent 42%),
+    radial-gradient(ellipse at 20% 60%,#12451c 0,transparent 42%),
+    linear-gradient(130deg,#06100d,#07121b);
+  border-bottom:1px solid #174e60;
+}
+.hero::after {
+  content:""; position:absolute; inset:0;
+  background:linear-gradient(90deg,#040a0cee 0%,transparent 100%);
+  pointer-events:none;
+}
+.hero-content { position:relative; z-index:1; max-width:650px; }
+.tag {
+  display:inline-block; padding:5px 11px;
+  border:1px solid #347d50; border-radius:30px;
+  color:var(--green); font-size:12px; font-weight:bold;
+}
+h1 {
+  font-size:clamp(37px,7vw,68px);
+  line-height:1.04; margin:19px 0;
+  letter-spacing:-2px;
+}
+.green { color:var(--green); }
+.blue { color:var(--blue); }
+.gold { color:var(--gold); }
+.hero p { color:#c1d0dc; max-width:580px; }
+.hero-actions { display:flex; gap:12px; flex-wrap:wrap; margin-top:24px; }
+.hero-art {
+  position:absolute; right:5%; top:17%;
+  font-size:clamp(90px,17vw,180px);
+  opacity:.28; filter:drop-shadow(0 0 22px #00c8ff);
+}
+.trust-strip {
+  display:grid; grid-template-columns:repeat(4,1fr);
+  margin:18px 4%; border:1px solid #1e6276;
+  border-radius:13px; background:#050c11;
+}
+.trust-item {
+  padding:17px 10px; text-align:center;
+  border-right:1px solid #25414d; font-size:12px;
+}
+.trust-item:last-child { border:0; }
+.trust-item strong { display:block; margin-bottom:4px; }
+section { padding:45px 4%; scroll-margin-top:90px; }
+.section-heading { margin-bottom:20px; }
+.section-heading h2 { font-size:clamp(24px,4vw,34px); }
+.section-heading p { color:var(--muted); font-size:13px; }
+.grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:17px; }
+.card {
+  min-width:0; padding:22px;
+  background:linear-gradient(140deg,#0b1b14,#071018);
+  border:1px solid #27633b; border-radius:15px;
+  overflow:hidden; transition:.25s;
+}
+.card:hover { transform:translateY(-4px); box-shadow:0 0 20px #53ff5417; }
+.card.pubg { border-color:#146582; background:linear-gradient(140deg,#0b1b2b,#071018); }
+.card.pool { border-color:#286e38; }
+.card-icon { font-size:45px; }
+.card h3 { font-size:25px; margin:7px 0; }
+.card p { color:var(--muted); font-size:13px; }
+.features { list-style:none; margin:15px 0 20px; font-size:13px; }
+.features li { margin:7px 0; }
+.features li::before { content:"✓  "; color:var(--green); font-weight:bold; }
+.pubg .features li::before { color:var(--blue); }
+.section-label {
+  display:inline-block; color:var(--blue);
+  font-size:11px; letter-spacing:1.5px; font-weight:bold;
+}
+.zone-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:15px; }
+.zone-card {
+  padding:20px; border:1px solid #234c60;
+  border-radius:13px; background:var(--panel);
+  transition:.2s;
+}
+.zone-card:hover { border-color:var(--blue); transform:translateY(-3px); }
+.zone-card .symbol { font-size:30px; }
+.zone-card h3 { margin:8px 0; font-size:17px; }
+.zone-card p { color:var(--muted); font-size:12px; margin-bottom:13px; }
+.zone-card a { color:var(--blue); font-size:12px; font-weight:bold; }
+.features-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:13px; }
+.feature {
+  padding:17px; background:#09141a;
+  border:1px solid #1e3c4b; border-radius:12px;
+}
+.feature .symbol { font-size:25px; }
+.feature h3 { font-size:14px; margin:7px 0; }
+.feature p { font-size:12px; color:var(--muted); }
+.community {
+  padding:28px; border:1px solid #27533b;
+  border-radius:15px;
+  background:radial-gradient(ellipse at top right,#103d27,#071018 65%);
+}
+.community h2 { font-size:clamp(25px,4vw,36px); margin-bottom:7px; }
+.community p { color:var(--muted); margin-bottom:18px; }
+.contact-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:13px; }
+.contact-card {
+  display:block; padding:18px; border:1px solid #234e61;
+  border-radius:12px; background:#09131b; transition:.2s;
+}
+.contact-card:hover { border-color:var(--green); transform:translateY(-3px); }
+.contact-card .symbol { font-size:27px; }
+.contact-card h3 { margin:5px 0; font-size:16px; }
+.contact-card p { color:var(--muted); font-size:12px; overflow-wrap:anywhere; }
+.contact-card span { display:inline-block; color:var(--green); font-size:11px; margin-top:12px; font-weight:bold; }
+footer {
+  border-top:1px solid #21404d; padding:25px 4%;
+  display:flex; flex-wrap:wrap; justify-content:space-between;
+  align-items:center; gap:15px;
+  background:#04090c; color:var(--muted); font-size:12px;
+}
+footer nav { gap:13px; }
+@media(max-width:760px) {
+  header { align-items:flex-start; }
+  nav { width:100%; gap:13px; }
+  .hero { padding:50px 5%; }
+  .hero-art { right:0; top:20%; opacity:.15; }
+  .trust-strip { grid-template-columns:repeat(2,1fr); }
+  .trust-item:nth-child(2) { border-right:0; }
+  .trust-item:nth-child(-n+2) { border-bottom:1px solid #25414d; }
+  .grid { grid-template-columns:1fr; }
+  .zone-grid { grid-template-columns:1fr; }
+  .features-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .contact-grid { grid-template-columns:1fr; }
+  section { padding:35px 5%; }
+}
+@media(max-width:380px) {
+  .features-grid { grid-template-columns:1fr; }
+  .btn { padding:11px 14px; }
+}
+</style>
 </head>
 
 <body>
 
-  <header>
-    <a class="logo" href="#home">HASSAAN.</a>
+<header>
+  <a class="logo" href="#home">
+    <span class="green">PUBG</span> <span>AK</span>
+    <span class="blue">UC</span>
+  </a>
+  <nav>
+    <a href="#home">⌂ Home</a>
+    <a href="#pool">8 Ball Pool</a>
+    <a href="#pubg">PUBG</a>
+    <a href="#features">Features</a>
+    <a href="#zone">Gaming Zone</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <a class="btn" href="#zone">GET STARTED ➜</a>
+</header>
 
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
-
-  <main>
-    <div class="container">
-
-      <section class="hero" id="home">
-        <span class="tag">Welcome to my portfolio</span>
-
-        <h1>
-          Hi, I'm <span class="gradient">Hassaan</span><br>
-          Future IT Professional.
-        </h1>
-
-        <p>
-          I'm beginning my journey into technology and programming.
-          This is my personal space where I share my journey,
-          ideas and the projects I build along the way.
-        </p>
-
-        <div>
-          <a class="btn" href="#projects">Explore My Work ↗</a>
-          <a class="btn btn-outline" href="#contact">Contact Me</a>
-        </div>
-      </section>
-
-      <section id="about">
-        <h2 class="section-title">
-          About Me<span class="gradient">.</span>
-        </h2>
-
-        <p class="section-desc">
-          A little introduction about myself.
-        </p>
-
-        <div class="card">
-          <h3>Who am I?</h3>
-          <p>
-            Hello! I'm Hassaan, an DIT student and beginner
-            exploring the world of technology. I'm starting
-            from the basics and working towards building
-            useful and creative projects. This website is
-            the beginning of my journey into web development.
-          </p>
-        </div>
-      </section>
-
-      <section id="projects">
-        <h2 class="section-title">
-          My Projects<span class="gradient">.</span>
-        </h2>
-
-        <p class="section-desc">
-          My work and things I'm building.
-        </p>
-
-        <div class="card-grid">
-
-          <article class="card">
-            <h3>01. My Portfolio</h3>
-            <p>
-              My first personal website, created to introduce
-              myself and begin my journey into web development.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3>02. Learning Journey</h3>
-            <p>
-              I'm exploring programming and technology,
-              learning new concepts and developing my
-              understanding step by step.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3>03. Coming Soon</h3>
-            <p>
-              More projects and creative ideas will appear
-              here as my journey continues.
-            </p>
-          </article>
-
-        </div>
-      </section>
-
-      <section id="contact">
-        <h2 class="section-title">
-          Let's Connect<span class="gradient">.</span>
-        </h2>
-
-        <div class="contact-card">
-          <h3>Have a project idea?</h3>
-
-          <p class="section-desc">
-            I'm at the beginning of my journey and excited
-            to explore new ideas and opportunities.
-          </p>
-
-          <!-- Replace this with your real email address -->
-          <a class="btn"
-             href="mailto:hmg01250@gmail.com">
-            Email Me ↗
-          </a>
-        </div>
-      </section>
-
+<main>
+<section class="hero" id="home">
+  <div class="hero-art" aria-hidden="true">🎱</div>
+  <div class="hero-content">
+    <span class="tag">⚡ PUBG AK UC • 8 BALL POOL</span>
+    <h1>YOUR ULTIMATE<br><span class="green">GAMING</span><br><span class="blue">DESTINATION.</span></h1>
+    <p>
+      Discover gaming guides, pool practice tips, PUBG UC information
+      and your next favourite gaming resources — all in one place.
+    </p>
+    <div class="hero-actions">
+      <a class="btn" href="#pubg">EXPLORE PUBG ↗</a>
+      <a class="btn blue-btn" href="#pool">8 BALL POOL ↗</a>
     </div>
-  </main>
+  </div>
+</section>
 
-  <footer>
-    © 2026 Hassaan. Built with curiosity and code.
-  </footer>
+<div class="trust-strip">
+  <div class="trust-item"><strong class="green">⚡ Quick Access</strong>Easy navigation</div>
+  <div class="trust-item"><strong class="blue">🎮 Two Game Zones</strong>One gaming hub</div>
+  <div class="trust-item"><strong class="green">📱 Mobile Ready</strong>Responsive layout</div>
+  <div class="trust-item"><strong class="blue">💬 Direct Contact</strong>Message Hassi</div>
+</div>
+
+<section id="games">
+  <div class="section-heading">
+    <span class="section-label">CHOOSE YOUR GAME</span>
+    <h2>ENTER THE <span class="green">ARENA</span></h2>
+    <p>Choose a game and explore its dedicated section.</p>
+  </div>
+
+  <div class="grid">
+    <article class="card pool" id="pool">
+      <div class="card-icon">🎱</div>
+      <span class="tag">BILLIARDS ZONE</span>
+      <h3>8 BALL <span class="green">POOL</span></h3>
+      <p>Build your skills with useful billiards guides and practice resources.</p>
+      <ul class="features">
+        <li>Shot angle and aiming guides</li>
+        <li>Cue and table strategy</li>
+        <li>Practice challenges</li>
+        <li>Tips for better gameplay</li>
+      </ul>
+      <a class="btn" href="#zone">EXPLORE 8 BALL ↗</a>
+    </article>
+
+    <article class="card pubg" id="pubg">
+      <div class="card-icon">🎮</div>
+      <span class="tag">BATTLE ROYALE ZONE</span>
+      <h3>PUBG <span class="blue">AK UC</span></h3>
+      <p>Explore UC information, top-up enquiries and cosmetic showcases.</p>
+      <ul class="features">
+        <li>PUBG UC information</li>
+        <li>AK weapon skin showcase</li>
+        <li>Gameplay and settings guides</li>
+        <li>Top-up enquiry through WhatsApp</li>
+      </ul>
+      <a class="btn blue-btn" href="#uc-zone">EXPLORE PUBG ↗</a>
+    </article>
+  </div>
+</section>
+
+<section id="uc-zone">
+  <div class="section-heading">
+    <span class="section-label">BATTLE ROYALE</span>
+    <h2>THE <span class="blue">PUBG UC ZONE</span></h2>
+    <p>Explore top-up information and contact Hassi to ask about availability.</p>
+  </div>
+  <div class="zone-grid">
+    <article class="zone-card">
+      <div class="symbol">🪙</div>
+      <h3>UC TOP-UP</h3>
+      <p>Ask about available UC packages and supported top-up options.</p>
+      <a href="https://wa.me/923146189072">ASK ABOUT UC ↗</a>
+    </article>
+    <article class="zone-card">
+      <div class="symbol">🔫</div>
+      <h3>AK SKINS</h3>
+      <p>Explore weapon cosmetics and learn about in-game skin options.</p>
+      <a href="#contact">ASK HASSI ↗</a>
+    </article>
+    <article class="zone-card">
+      <div class="symbol">🎯</div>
+      <h3>GAME GUIDES</h3>
+      <p>Discover sensitivity tips, controls and gameplay improvement guides.</p>
+      <a href="#features">VIEW FEATURES ↗</a>
+    </article>
+  </div>
+</section>
+
+<section id="zone">
+  <div class="section-heading">
+    <span class="section-label">NO SUBSCRIPTION PLANS</span>
+    <h2>⚡ THE <span class="green">GAMING ZONE</span></h2>
+    <p>Your shortcuts to games, guides and the Hassi community.</p>
+  </div>
+  <div class="zone-grid">
+    <article class="zone-card">
+      <div class="symbol">🎱</div>
+      <h3>POOL PRACTICE</h3>
+      <p>Visit the 8 Ball Pool section for shot strategies and practice ideas.</p>
+      <a href="#pool">OPEN POOL ZONE ↗</a>
+    </article>
+    <article class="zone-card">
+      <div class="symbol">🎮</div>
+      <h3>PUBG RESOURCES</h3>
+      <p>Find UC information, skin showcases and gameplay resources.</p>
+      <a href="#pubg">OPEN PUBG ZONE ↗</a>
+    </article>
+    <article class="zone-card">
+      <div class="symbol">👑</div>
+      <h3>HASSI COMMUNITY</h3>
+      <p>Follow updates, send a question or connect with Hassi directly.</p>
+      <a href="#contact">CONNECT NOW ↗</a>
+    </article>
+  </div>
+</section>
+
+<section id="features">
+  <div class="section-heading">
+    <span class="section-label">ENGINE FEATURES</span>
+    <h2>WHY <span class="green">THIS HUB?</span></h2>
+    <p>Simple, useful and built for gaming fans.</p>
+  </div>
+  <div class="features-grid">
+    <article class="feature">
+      <div class="symbol">📱</div>
+      <h3>Mobile Friendly</h3>
+      <p>Designed to work on Android phones and larger screens.</p>
+    </article>
+    <article class="feature">
+      <div class="symbol">⚡</div>
+      <h3>Quick Navigation</h3>
+      <p>Reach game sections and contact links easily.</p>
+    </article>
+    <article class="feature">
+      <div class="symbol">🎯</div>
+      <h3>Gaming Guides</h3>
+      <p>Explore tips for improving your own gameplay.</p>
+    </article>
+    <article class="feature">
+      <div class="symbol">💬</div>
+      <h3>Direct Support</h3>
+      <p>Contact Hassi for enquiries and information.</p>
+    </article>
+  </div>
+</section>
+
+<section>
+  <div class="community">
+    <span class="tag">👑 HASSI COMMUNITY</span>
+    <h2>READY TO <span class="green">LEVEL UP?</span></h2>
+    <p>Follow the page, share your feedback and stay connected for future updates.</p>
+    <div class="hero-actions">
+      <a class="btn" href="https://instagram.com/hass.noir" target="_blank" rel="noopener">FOLLOW ON INSTAGRAM ↗</a>
+      <a class="btn blue-btn" href="https://t.me/Hassi_malik" target="_blank" rel="noopener">JOIN ON TELEGRAM ↗</a>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="section-heading">
+    <span class="section-label">GET IN TOUCH</span>
+    <h2>CONNECT WITH <span class="green">HASSI</span></h2>
+    <p>For gaming questions, UC enquiries and updates.</p>
+  </div>
+  <div class="contact-grid">
+    <a class="contact-card" href="https://instagram.com/hass.noir" target="_blank" rel="noopener">
+      <div class="symbol">📸</div>
+      <h3>Instagram</h3>
+      <p>@hass.noir</p>
+      <span>VISIT PROFILE ↗</span>
+    </a>
+    <a class="contact-card" href="https://wa.me/923146189072" target="_blank" rel="noopener">
+      <div class="symbol">💬</div>
+      <h3>WhatsApp</h3>
+      <p>03146189072</p>
+      <span>CHAT WITH HASSI ↗</span>
+    </a>
+    <a class="contact-card" href="https://t.me/Hassi_malik" target="_blank" rel="noopener">
+      <div class="symbol">✈️</div>
+      <h3>Telegram</h3>
+      <p>@Hassi_malik</p>
+      <span>SEND A MESSAGE ↗</span>
+    </a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <a class="logo" href="#home">
+    <span class="green">PUBG</span> AK <span class="blue">UC</span>
+  </a>
+  <span>Play Better • Keep Improving</span>
+  <nav>
+    <a href="#pool">8 Ball Pool</a>
+    <a href="#pubg">PUBG</a>
+    <a href="#zone">Gaming Zone</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <span>© 2026 HASSI GAMING</span>
+</footer>
 
 </body>
-</html>
+  </html>
+  
