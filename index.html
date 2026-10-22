@@ -1,125 +1,48 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>HASSI ENGINE</title>
+<title>Hassi Pool Calculator</title>
 <style>
-*{box-sizing:border-box}
-body{margin:0;background:#080d17;color:white;font-family:Arial;text-align:center}
-header{padding:22px;color:#36eaff;font-size:25px;font-weight:bold;letter-spacing:3px}
-p{color:#a9bad0;font-size:13px}
-canvas{width:94%;max-width:650px;border:2px solid #36eaff;border-radius:12px;touch-action:none}
-button{background:#102a3d;color:#36eaff;border:1px solid #36eaff;padding:12px;border-radius:8px;margin:5px}
-input{width:80%;accent-color:#36eaff}
+body{background:#101820;color:white;font-family:Arial;
+text-align:center;padding:18px}
+input{width:85%;padding:12px;margin:8px}
+button{padding:12px 20px;background:#00dca0;
+border:0;border-radius:8px;font-weight:bold}
+#result{font-size:20px;margin-top:22px}
 </style>
 </head>
 <body>
-<header>HASSI ENGINE</header>
-<p>POOL LAB • AUTO AIM • TRAJECTORY</p>
-<canvas id="pool" width="600" height="340"></canvas>
-<p>Automatic target selection</p>
-<button onclick="autoAim()">AUTO AIM</button>
-<button onclick="shoot()">SIMULATE SHOT</button>
-<button onclick="resetGame()">RESET</button>
-<p id="info">Ready • Select AUTO AIM to begin</p>
-<label>Shot power</label><br>
-<input id="power" type="range" min="20" max="100" value="65">
+<h2>🎱 HASSI POOL CALCULATOR</h2>
+<p>Cue ball aur target ball ke coordinates daalo</p>
+<input id="x1" type="number" placeholder="Cue ball X">
+<input id="y1" type="number" placeholder="Cue ball Y">
+<input id="x2" type="number" placeholder="Target ball X">
+<input id="y2" type="number" placeholder="Target ball Y">
+<button onclick="calc()">CALCULATE SHOT</button>
+<div id="result"></div>
 <script>
-const cv=document.querySelector("#pool");
-const ctx=cv.getContext("2d");
-let cue,target,aiming=false,angle=0,anim=null;
-
-function resetGame(){
- if(anim)cancelAnimationFrame(anim);
- anim=null;
- cue={x:115,y:170,vx:0,vy:0,r:10};
- target={x:380,y:130,vx:0,vy:0,r:10};
- aiming=false;draw();
- document.querySelector("#info").textContent="Ready";
+function calc(){
+let x1=+document.getElementById('x1').value;
+let y1=+document.getElementById('y1').value;
+let x2=+document.getElementById('x2').value;
+let y2=+document.getElementById('y2').value;
+if(['x1','y1','x2','y2'].some(id=>
+document.getElementById(id).value.trim()==='')){
+document.getElementById('result').textContent=
+'Enter all four coordinates.';
+return;
 }
-function autoAim(){
- const dx=target.x-cue.x,dy=target.y-cue.y;
- angle=Math.atan2(dy,dx);aiming=true;draw();
- document.querySelector("#info").textContent=
- "Aim calculated: "+(angle*180/Math.PI).toFixed(1)+" degrees";
+let dx=x2-x1,dy=y2-y1;
+let angle=Math.atan2(dy,dx)*180/Math.PI;
+let distance=Math.hypot(dx,dy);
+document.getElementById('result').innerHTML=
+'Angle: '+angle.toFixed(2)+'°<br>'+
+'Distance: '+distance.toFixed(2)+' units';
 }
-function draw(){
- ctx.clearRect(0,0,600,340);
- ctx.fillStyle="#63391f";ctx.fillRect(0,0,600,340);
- ctx.fillStyle="#087649";ctx.fillRect(22,22,556,296);
- for(const x of [22,300,578])for(const y of [22,318]){
-  ctx.beginPath();ctx.arc(x,y,15,0,7);
-  ctx.fillStyle="#030608";ctx.fill();
- }
- if(aiming){
-  ctx.save();ctx.setLineDash([8,6]);
-  ctx.strokeStyle="#63f6ff";ctx.lineWidth=2;
-  ctx.beginPath();ctx.moveTo(cue.x,cue.y);
-  ctx.lineTo(cue.x+Math.cos(angle)*650,
-             cue.y+Math.sin(angle)*650);ctx.stroke();
-  ctx.setLineDash([]);
-  ctx.strokeStyle="#ffe26b";
-  ctx.beginPath();ctx.moveTo(target.x,target.y);
-  ctx.lineTo(target.x+Math.cos(angle)*120,
-             target.y+Math.sin(angle)*120);ctx.stroke();
-  ctx.restore();
- }
- ball(cue);ball(target,"#ef4444");
-}
-function ball(b,color="#ffffff"){
- ctx.beginPath();ctx.arc(b.x,b.y,b.r,0,Math.PI*2);
- ctx.fillStyle=color;ctx.fill();
- ctx.strokeStyle="#ffffffaa";ctx.stroke();
-}
-function shoot(){
- if(!aiming)autoAim();
- const power=Number(document.querySelector("#power").value)/14;
- cue.vx=Math.cos(angle)*power;
- cue.vy=Math.sin(angle)*power;
- document.querySelector("#info").textContent="Simulating shot...";
- animate();
-}
-function animate(){
- if(anim)cancelAnimationFrame(anim);
- function frame(){
-  cue.x+=cue.vx;cue.y+=cue.vy;
-  cue.vx*=0.985;cue.vy*=0.985;
-  if(cue.x<33||cue.x>567)cue.vx*=-1;
-  if(cue.y<33||cue.y>307)cue.vy*=-1;
-  cue.x=Math.max(33,Math.min(567,cue.x));
-  cue.y=Math.max(33,Math.min(307,cue.y));
-  const dx=target.x-cue.x,dy=target.y-cue.y;
-  const d=Math.hypot(dx,dy);
-  if(d<20&&d>0){
-   target.vx=dx/d*Math.hypot(cue.vx,cue.vy)*0.8;
-   target.vy=dy/d*Math.hypot(cue.vx,cue.vy)*0.8;
-   cue.vx*=-0.2;cue.vy*=-0.2;
-  }
-  target.x+=target.vx;target.y+=target.vy;
-  target.vx*=0.98;target.vy*=0.98;
-  if(target.x<33||target.x>567)target.vx*=-1;
-  if(target.y<33||target.y>307)target.vy*=-1;
-  draw();
-  if(Math.hypot(cue.vx,cue.vy)+Math.hypot(target.vx,target.vy)>.15){
-   anim=requestAnimationFrame(frame);
-  }else{
-   anim=null;
-   document.querySelector("#info").textContent="Simulation complete";
-  }
- }
- anim=requestAnimationFrame(frame);
-}
-cv.addEventListener("pointerdown",e=>{
- const r=cv.getBoundingClientRect();
- const x=(e.clientX-r.left)*600/r.width;
- const y=(e.clientY-r.top)*340/r.height;
- if(Math.hypot(x-cue.x,y-cue.y)<35){
-  cue.x=x;cue.y=y;aiming=false;draw();
- }
-});
-resetGame();
 </script>
 </body>
 </html>
+
+
