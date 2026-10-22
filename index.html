@@ -1,214 +1,127 @@
-!DOCTYPE html>
+
+  
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#05080d">
-<meta name="description" content="PUBG AK UC and 8 Ball Pool gaming hub. UC enquiries, AK skin showcase, billiards guides and Hassi community links.">
-<title>PUBG AK UC | HASSI GAMING</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>HASSI ENGINE</title>
 <style>
-:root{--bg:#05080d;--panel:#09121d;--panel2:#0d1a27;--green:#68ff59;--cyan:#20d9ff;--gold:#ffc85a;--white:#f3f8ff;--muted:#9eafc2;--line:#18384a}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:90px}
-body{background:var(--bg);color:var(--white);font-family:Inter,Arial,Helvetica,sans-serif;line-height:1.55;overflow-x:hidden}
-body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;background:radial-gradient(ellipse at 12% 20%,#0a351f55,transparent 35%),radial-gradient(ellipse at 90% 40%,#06365055,transparent 35%)}
-a{color:inherit;text-decoration:none}
-button{font:inherit;cursor:pointer}
-.topline{height:3px;background:linear-gradient(90deg,var(--green),var(--cyan),var(--gold))}
-header{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:13px 4.5%;background:#05090df2;backdrop-filter:blur(14px);border-bottom:1px solid #244555}
-.brand{display:flex;align-items:center;gap:10px;font-weight:1000;font-size:clamp(18px,2.5vw,27px);font-style:italic;letter-spacing:-1px;white-space:nowrap}
-.brand-mark{width:40px;height:40px;display:grid;place-items:center;border:2px solid var(--green);color:var(--green);transform:skew(-8deg);font-size:19px;box-shadow:0 0 18px #68ff5933}
-.brand .ak{color:#fff}.brand .uc{color:var(--cyan)}
-nav{display:flex;align-items:center;gap:clamp(9px,1.7vw,24px);font-size:12px;font-weight:800}
-nav a{color:#c9d5df;transition:.2s}
-nav a:hover{color:var(--green)}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid var(--green);border-radius:6px;padding:12px 18px;background:linear-gradient(110deg,#69ff58,#b5ff71);color:#061008;font-weight:1000;font-size:12px;letter-spacing:.3px;box-shadow:0 0 20px #68ff5930;transition:transform .2s,box-shadow .2s}
-.btn:hover{transform:translateY(-3px);box-shadow:0 0 28px #68ff5966}
-.btn-cyan{border-color:var(--cyan);background:linear-gradient(110deg,#00bce9,#64e8ff);box-shadow:0 0 20px #20d9ff2b}
-.btn-ghost{background:#07131b;color:var(--white);border-color:#315a6a;box-shadow:none}
-.hero{position:relative;isolation:isolate;min-height:490px;display:flex;align-items:center;padding:65px 5%;overflow:hidden;border-bottom:1px solid #235263;background:linear-gradient(90deg,#03080df5 0%,#06121be8 39%,#06121b66 75%,#03080d88 100%),radial-gradient(ellipse at 75% 45%,#17627c 0%,#0b2b3b 27%,transparent 58%),radial-gradient(ellipse at 20% 75%,#144522 0%,transparent 42%),#071018}
-.hero:before{content:"";position:absolute;z-index:-1;inset:0;background:repeating-linear-gradient(125deg,transparent 0 70px,#20d9ff08 71px 73px,transparent 74px 140px);mask-image:linear-gradient(90deg,transparent,#000)}
-.hero-copy{max-width:660px;position:relative;z-index:2}
-.eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 11px;border:1px solid #3b8553;background:#071a12cc;color:var(--green);font-size:11px;font-weight:1000;letter-spacing:1.7px;text-transform:uppercase}
-.pulse{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 12px var(--green);animation:pulse 1.5s infinite}
-@keyframes pulse{50%{opacity:.35;transform:scale(.7)}}
-h1{font-size:clamp(42px,7.4vw,84px);line-height:.99;letter-spacing:-3px;margin:22px 0 17px;font-weight:1000;text-transform:uppercase}
-.gradient-text{background:linear-gradient(90deg,var(--green),#c3ff8b 60%,#fff);-webkit-background-clip:text;background-clip:text;color:transparent}
-.cyan-text{color:var(--cyan)}
-.hero-copy>p{max-width:570px;color:#bdcbd7;font-size:15px}
-.hero-pills{display:flex;flex-wrap:wrap;gap:9px;margin:21px 0}
-.pill{font-size:11px;font-weight:800;border:1px solid #285263;border-radius:30px;background:#07141cbb;padding:8px 11px;color:#e4f4fc}
-.pill b{color:var(--green);margin-right:5px}
-.hero-buttons{display:flex;flex-wrap:wrap;gap:11px}
-.hero-art{position:absolute;right:3%;top:50%;transform:translateY(-50%);width:min(48%,570px);height:370px;display:grid;place-items:center;pointer-events:none}
-.art-glow{position:absolute;width:270px;height:270px;border-radius:50%;background:radial-gradient(circle,#20d9ff40,transparent 68%);filter:blur(8px)}
-.orb8{position:absolute;left:8%;top:23%;width:130px;height:130px;border-radius:50%;display:grid;place-items:center;font-size:60px;font-weight:1000;color:#fff;background:radial-gradient(circle at 30% 25%,#3d4b56,#020508 68%);border:5px solid #1d2b36;box-shadow:0 0 28px #68ff5955, inset -10px -14px 18px #000}
-.orb8:after{content:"8";display:grid;place-items:center;width:54px;height:54px;border-radius:50%;background:#e8edf1;color:#05080d;font-size:34px}
-.uc-stack{position:absolute;right:8%;bottom:18%;display:flex;gap:9px;align-items:center;transform:rotate(-9deg)}
-.uc-token{width:73px;height:73px;border:3px solid #ffd778;border-radius:15px;display:grid;place-items:center;background:linear-gradient(145deg,#ffed9a,#a86b19 50%,#3a2509);color:#fff;font-weight:1000;font-size:25px;text-shadow:0 2px 5px #000;box-shadow:0 0 24px #ffbd4555}
-.uc-token:nth-child(2){transform:translateY(-25px);background:linear-gradient(145deg,#a2f7ff,#1476a8 60%,#052c54);border-color:#8beaff}
-.art-caption{position:absolute;right:2%;top:12%;font-size:clamp(22px,3vw,38px);font-weight:1000;font-style:italic;text-align:right;line-height:1.05;text-shadow:0 0 20px #20d9ff55}
-.art-caption span{display:block;color:var(--gold)}
-.hero-bottom{position:absolute;right:4%;bottom:6%;font-size:10px;letter-spacing:3px;color:#b7d1dd}
-.strip{margin:18px 4%;display:grid;grid-template-columns:repeat(4,1fr);border:1px solid #236078;border-radius:12px;background:linear-gradient(110deg,#061018,#08131b);overflow:hidden}
-.strip-item{display:flex;align-items:center;justify-content:center;gap:12px;padding:17px 10px;border-right:1px solid #24414f}
-.strip-item:last-child{border:0}.strip-icon{font-size:25px;color:var(--green)}.strip-item strong{display:block;font-size:12px}.strip-item small{color:var(--muted);font-size:10px}
-section{padding:48px 4.5%;scroll-margin-top:86px}
-.section-top{display:flex;justify-content:space-between;align-items:end;gap:18px;margin-bottom:22px}
-.kicker{font-size:10px;letter-spacing:2px;font-weight:1000;color:var(--cyan);text-transform:uppercase}
-.section-top h2{font-size:clamp(25px,4vw,39px);line-height:1.1;margin:6px 0}
-.section-top p{color:var(--muted);font-size:13px;max-width:590px}
-.section-index{font-size:11px;color:#648194;letter-spacing:2px;white-space:nowrap}
-.game-grid{display:grid;grid-template-columns:1fr 1fr;gap:17px}
-.game-card{position:relative;isolation:isolate;min-height:295px;overflow:hidden;border-radius:13px;padding:26px;border:1px solid #397849;background:radial-gradient(ellipse at 82% 45%,#14582c 0%,transparent 48%),linear-gradient(115deg,#06120b,#091b12 65%,#07120d);transition:.25s}
-.game-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px #0008}
-.game-card.pubg{border-color:#16718b;background:radial-gradient(ellipse at 85% 40%,#105b79 0%,transparent 48%),linear-gradient(115deg,#06121d,#0a1b2c 65%,#07121b)}
-.game-card:after{content:attr(data-mark);position:absolute;z-index:-1;right:-7px;bottom:-30px;font-size:clamp(115px,18vw,220px);font-weight:1000;font-style:italic;color:#ffffff0b;line-height:1}
-.game-card h3{font-size:clamp(24px,3.2vw,36px);line-height:1.05;margin:12px 0 7px;font-style:italic}
-.game-card p{font-size:12px;color:#b3c6bd;max-width:390px}
-.game-card .features{list-style:none;margin:15px 0 20px;font-size:12px;max-width:390px}
-.features li{margin:6px 0}.features li:before{content:"✓";color:var(--green);font-weight:1000;margin-right:9px}
-.pubg .features li:before{color:var(--cyan)}
-.game-card .btn{position:relative;z-index:2}
-.game-emblem{font-size:37px;filter:drop-shadow(0 0 14px #68ff5944)}
-.game-card.pubg .game-emblem{filter:drop-shadow(0 0 14px #20d9ff55)}
-.zone-layout{display:grid;grid-template-columns:1.3fr .7fr;gap:17px}
-.panel{border:1px solid var(--line);border-radius:13px;background:linear-gradient(145deg,#0b1722,#071018);padding:22px;min-width:0}
-.panel-title{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:15px}
-.panel-title h3{font-size:19px}.panel-title span{font-size:10px;color:var(--green);letter-spacing:1px;font-weight:1000}
-.uc-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
-.mini-card{border:1px solid #28536a;border-radius:10px;background:linear-gradient(150deg,#0c202e,#071019);padding:15px 9px;text-align:center}
-.coin{width:49px;height:49px;margin:0 auto 10px;display:grid;place-items:center;border:3px solid #ffdc86;border-radius:14px;transform:rotate(-8deg);background:linear-gradient(145deg,#ffe7a1,#bd791c 65%,#61380a);color:#fff;font-weight:1000;font-size:18px;text-shadow:0 2px 4px #3c2100;box-shadow:0 0 18px #ffc85a26}
-.mini-card h4{font-size:14px}.mini-card p{color:var(--muted);font-size:10px;margin:4px 0 12px}.mini-card .btn{width:100%;padding:9px 5px;font-size:10px}
-.notice{font-size:11px;color:#a7bdcc;margin-top:12px;line-height:1.6}
-.skin-feature{position:relative;min-height:170px;border:1px solid #3b5266;border-radius:10px;overflow:hidden;padding:17px;background:radial-gradient(ellipse at 70% 30%,#1a4b69,transparent 55%),linear-gradient(135deg,#09131f,#0d2636);margin-bottom:12px}
-.skin-art{font-size:60px;filter:drop-shadow(0 0 12px #20d9ff66);margin:5px 0}
-.skin-feature h4{font-size:17px}.skin-feature p{font-size:11px;color:var(--muted);max-width:270px}
-.skin-tags{display:flex;flex-wrap:wrap;gap:7px}.skin-tags span{padding:6px 9px;border:1px solid #284d60;border-radius:5px;font-size:10px;color:#c6dce8;background:#091722}
-.feature-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-.feature-box{border:1px solid #1c3d4d;background:#09131b;border-radius:10px;padding:17px;transition:.2s}
-.feature-box:hover{border-color:var(--cyan);transform:translateY(-3px)}
-.feature-box .ico{font-size:26px}.feature-box h3{font-size:13px;margin:7px 0}.feature-box p{font-size:11px;color:var(--muted)}
-.community{border:1px solid #285c43;border-radius:13px;padding:27px;background:radial-gradient(ellipse at 85% 15%,#14512e99,transparent 50%),linear-gradient(110deg,#07130c,#08131b);display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
-.community h2{font-size:clamp(24px,4vw,35px)}.community p{font-size:12px;color:var(--muted);margin-top:5px}
-.social-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}
-.social{display:flex;align-items:center;gap:13px;padding:17px;border:1px solid #234b5c;border-radius:10px;background:#08131b;transition:.2s;min-width:0}
-.social:hover{border-color:var(--green);transform:translateY(-3px)}
-.social-icon{width:42px;height:42px;flex:0 0 42px;display:grid;place-items:center;border-radius:12px;background:#112734;font-size:21px}
-.social h3{font-size:13px}.social p{font-size:11px;color:var(--muted);overflow-wrap:anywhere}.social .arrow{margin-left:auto;color:var(--green)}
-footer{padding:24px 4.5%;border-top:1px solid #203d4a;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:15px;background:#04080c;color:var(--muted);font-size:11px}
-.footer-links{display:flex;gap:15px;flex-wrap:wrap}.footer-links a:hover{color:var(--green)}
-.toast{position:fixed;bottom:20px;left:50%;transform:translate(-50%,20px);padding:12px 18px;border:1px solid #36724a;background:#07170d;color:#eaffeb;border-radius:8px;font-size:12px;opacity:0;pointer-events:none;transition:.25s;z-index:100}
-.toast.show{opacity:1;transform:translate(-50%,0)}
-@media(max-width:850px){header{padding:12px 4%;}header>.btn{display:none}.hero{min-height:450px}.hero-art{right:-6%;opacity:.68;width:48%}.orb8{width:90px;height:90px;font-size:40px}.orb8:after{width:39px;height:39px;font-size:25px}.uc-token{width:52px;height:52px;font-size:18px}.art-caption{font-size:23px}.strip{grid-template-columns:repeat(2,1fr)}.strip-item:nth-child(2){border-right:0}.strip-item:nth-child(-n+2){border-bottom:1px solid #24414f}.zone-layout{grid-template-columns:1fr}.feature-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:600px){header{align-items:flex-start;flex-direction:column;gap:10px}nav{width:100%;overflow-x:auto;flex-wrap:nowrap;padding:4px 0 7px;gap:18px}nav a{white-space:nowrap}.hero{min-height:510px;padding:46px 5% 38px;align-items:flex-start}.hero-copy{max-width:100%}.hero-art{right:-5%;top:auto;bottom:-25px;transform:none;width:65%;height:220px;opacity:.36}.art-caption{top:14%;right:4%;font-size:21px}.orb8{left:4%;top:30%;width:76px;height:76px}.orb8:after{width:34px;height:34px;font-size:22px}.uc-stack{right:5%;bottom:20%}.uc-token{width:43px;height:43px;font-size:15px}.hero-bottom{display:none}h1{font-size:clamp(40px,12vw,60px);letter-spacing:-2px}.hero-copy>p{font-size:13px}.hero-pills{gap:6px}.pill{font-size:10px;padding:7px 8px}.btn{padding:11px 13px;font-size:11px}.strip{margin:12px 3%}.strip-item{padding:13px 6px;gap:7px}.strip-item strong{font-size:11px}.strip-item small{font-size:9px}section{padding:35px 4%}.section-index{display:none}.game-grid{grid-template-columns:1fr}.game-card{min-height:280px;padding:20px}.uc-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.social-grid{grid-template-columns:1fr}.community{padding:22px}.feature-grid{gap:9px}.feature-box{padding:13px}.panel{padding:15px}footer{padding:22px 4%}}
-@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+*{box-sizing:border-box}
+body{margin:0;background:#080d17;color:white;font-family:Arial;text-align:center}
+header{padding:22px;color:#36eaff;font-size:25px;font-weight:bold;letter-spacing:3px}
+p{color:#a9bad0;font-size:13px}
+canvas{width:94%;max-width:650px;border:2px solid #36eaff;border-radius:12px;touch-action:none}
+button{background:#102a3d;color:#36eaff;border:1px solid #36eaff;padding:12px;border-radius:8px;margin:5px}
+input{width:80%;accent-color:#36eaff}
 </style>
 </head>
 <body>
-<div class="topline"></div>
-<header>
-  <a class="brand" href="#home" aria-label="PUBG AK UC home">
-    <span class="brand-mark">HX</span>
-    <span><span class="green">PUBG</span> <span class="ak">AK</span> <span class="uc">UC</span></span>
-  </a>
-  <nav aria-label="Main navigation">
-    <a href="#home">⌂ HOME</a>
-    <a href="#pool">🎱 8 BALL POOL</a>
-    <a href="#pubg">PUBG UC</a>
-    <a href="#skins">AK SKINS</a>
-    <a href="#features">FEATURES</a>
-    <a href="#contact">CONTACT</a>
-  </nav>
-  <a class="btn" href="#uc-store">UC ENQUIRY ↗</a>
-</header>
+<header>HASSI ENGINE</header>
+<p>POOL LAB • AUTO AIM • TRAJECTORY</p>
+<canvas id="pool" width="600" height="340"></canvas>
+<p>Automatic target selection</p>
+<button onclick="autoAim()">AUTO AIM</button>
+<button onclick="shoot()">SIMULATE SHOT</button>
+<button onclick="resetGame()">RESET</button>
+<p id="info">Ready • Select AUTO AIM to begin</p>
+<label>Shot power</label><br>
+<input id="power" type="range" min="20" max="100" value="65">
+<script>
+const cv=document.querySelector("#pool");
+const ctx=cv.getContext("2d");
+let cue,target,aiming=false,angle=0,anim=null;
 
-<main>
-<section class="hero" id="home">
-  <div class="hero-copy">
-    <span class="eyebrow"><span class="pulse"></span> HASSI GAMING HUB</span>
-    <h1>YOUR NEXT<br><span class="gradient-text">LEVEL</span> STARTS<br><span class="cyan-text">HERE.</span></h1>
-    <p>PUBG UC enquiries, AK skin showcases and 8 Ball Pool guides — brought together in one ultra-premium gaming hub.</p>
-    <div class="hero-pills">
-      <span class="pill"><b>✦</b> UC ENQUIRIES</span>
-      <span class="pill"><b>✦</b> 8 BALL POOL</span>
-      <span class="pill"><b>✦</b> ANDROID READY</span>
-    </div>
-    <div class="hero-buttons">
-      <a class="btn" href="#uc-store">EXPLORE UC ZONE ↗</a>
-      <a class="btn btn-cyan" href="#pool">ENTER 8 BALL ZONE ↗</a>
-    </div>
-  </div>
-  <div class="hero-art" aria-hidden="true">
-    <div class="art-glow"></div>
-    <div class="art-caption">PLAY SMARTER<span>WIN YOUR WAY</span></div>
-    <div class="orb8"></div>
-    <div class="uc-stack"><div class="uc-token">UC</div><div class="uc-token">UC</div><div class="uc-token">UC</div></div>
-  </div>
-  <div class="hero-bottom">GAMING • COMMUNITY • RESOURCES</div>
-</section>
-
-<div class="strip" aria-label="Highlights">
-  <div class="strip-item"><span class="strip-icon">⚡</span><div><strong>QUICK ACCESS</strong><small>Easy navigation</small></div></div>
-  <div class="strip-item"><span class="strip-icon">◈</span><div><strong>GAME ZONES</strong><small>Two worlds, one hub</small></div></div>
-  <div class="strip-item"><span class="strip-icon">▣</span><div><strong>MOBILE READY</strong><small>Phone-friendly layout</small></div></div>
-  <div class="strip-item"><span class="strip-icon">◎</span><div><strong>DIRECT CONTACT</strong><small>Connect with Hassi</small></div></div>
-</div>
-
-<section id="games">
-  <div class="section-top">
-    <div><div class="kicker">SELECT YOUR ARENA</div><h2>CHOOSE YOUR <span class="gradient-text">GAME.</span></h2><p>Dedicated spaces for pool fans and PUBG players.</p></div>
-    <div class="section-index">01 / GAME ZONES</div>
-  </div>
-  <div class="game-grid">
-    <article class="game-card" id="pool" data-mark="8">
-      <div class="game-emblem">🎱</div>
-      <div class="kicker" style="color:var(--green)">BILLIARDS • SKILL • STRATEGY</div>
-      <h3>8 BALL <span class="green">POOL</span></h3>
-      <p>Sharpen your game with aiming basics, shot angles and table strategy.</p>
-      <ul class="features"><li>Shot-angle learning guides</li><li>Cue and table strategy</li><li>Practice challenges and tips</li></ul>
-      <a class="btn" href="#pool-lab">ENTER POOL ZONE ↗</a>
-    </article>
-    <article class="game-card pubg" id="pubg" data-mark="UC">
-      <div class="game-emblem">🎮</div>
-      <div class="kicker">BATTLE ROYALE • UC • COSMETICS</div>
-      <h3>PUBG <span class="cyan-text">AK UC</span></h3>
-      <p>Explore UC enquiries, cosmetic item showcases and gameplay resources. No hacks or cheats.</p>
-      <ul class="features"><li>UC top-up enquiries</li><li>AK skin showcase</li><li>Settings and gameplay guides</li></ul>
-      <a class="btn btn-cyan" href="#uc-store">EXPLORE PUBG ZONE ↗</a>
-    </article>
-  </div>
-</section>
-
-<section id="uc-store">
-  <div class="section-top">
-    <div><div class="kicker">BATTLE ROYALE HUB</div><h2>THE <span class="cyan-text">UC ZONE.</span></h2><p>Ask about available UC options directly. Package availability and rates are confirmed by you before ordering.</p></div>
-    <div class="section-index">02 / UC ENQUIRY</div>
-  </div>
-  <div class="zone-layout">
-    <div class="panel">
-      <div class="panel-title"><h3>◈ UC ENQUIRY DESK</h3><span>CONTACT TO CHECK</span></div>
-      <div class="uc-grid">
-        <article class="mini-card"><div class="coin">UC</div><h4>Starter UC</h4><p>Ask for current availability</p><a class="btn btn-cyan" href="https://wa.me/923146189072?text=Hi%20Hassi%2C%20I%27d%20like%20to%20ask%20about%20a%20PUBG%20UC%20top-up.">ASK NOW ↗</a></article>
-        <article class="mini-card"><div class="coin">UC</div><h4>UC Bundles</h4><p>Check bundle options</p><a class="btn btn-cyan" href="https://wa.me/923146189072?text=Hi%20Hassi%2C%20please%20share%20available%20PUBG%20UC%20bundle%20options.">ASK NOW ↗</a></article>
-        <article class="mini-card"><div class="coin">UC</div><h4>Special Enquiry</h4><p>Tell us what you need</p><a class="btn btn-cyan" href="https://wa.me/923146189072?text=Hi%20Hassi%2C%20I%20have%20a%20PUBG%20UC%20enquiry.">ASK NOW ↗</a></article>
-      </div>
-      <p class="notice">ℹ️ No displayed prices or instant checkout. Confirm availability, total cost and delivery details with Hassi before making any payment. Never share your password or verification codes.</p>
-    </div>
-    <aside class="panel" id="skins">
-      <div class="panel-title"><h3>AK SKIN SHOWCASE</h3><span style="color:var(--gold)">COSMETICS</span></div>
-      <div class="skin-feature">
-        <div class="skin-art">🔫</div>
-        <h4><span class="gold">AK</span> STYLE LAB</h4>
-        <p>Explore weapon looks and cosmetic inspiration. This is a showcase, not a claim that items are in stock.</p>
-      </div>
-      <div class="skin-tags"><span>WEAPON SKINS</span><span>OUTFITS</span><span>CRATES</span><span>COLLECTIONS</span></div>
-      <a class="btn btn-ghost" style="width:100%;margin-top:15px" href="https://wa.me/923146189072?text=Hi%20Hassi%2C%20I%27d%20like%20to%20ask%20about%20PUBG%20cosmetic%20items.">ASK ABOUT ITEMS ↗</a>
-    </aside>
-  </div>
-</section>
-
-<section id="pool-lab">
-  <div class="section-top">
-    <div><div class="kicker" style="color:var(--green)">BILLIARDS PRACTICE LAB<
-  
+function resetGame(){
+ if(anim)cancelAnimationFrame(anim);
+ anim=null;
+ cue={x:115,y:170,vx:0,vy:0,r:10};
+ target={x:380,y:130,vx:0,vy:0,r:10};
+ aiming=false;draw();
+ document.querySelector("#info").textContent="Ready";
+}
+function autoAim(){
+ const dx=target.x-cue.x,dy=target.y-cue.y;
+ angle=Math.atan2(dy,dx);aiming=true;draw();
+ document.querySelector("#info").textContent=
+ "Aim calculated: "+(angle*180/Math.PI).toFixed(1)+" degrees";
+}
+function draw(){
+ ctx.clearRect(0,0,600,340);
+ ctx.fillStyle="#63391f";ctx.fillRect(0,0,600,340);
+ ctx.fillStyle="#087649";ctx.fillRect(22,22,556,296);
+ for(const x of [22,300,578])for(const y of [22,318]){
+  ctx.beginPath();ctx.arc(x,y,15,0,7);
+  ctx.fillStyle="#030608";ctx.fill();
+ }
+ if(aiming){
+  ctx.save();ctx.setLineDash([8,6]);
+  ctx.strokeStyle="#63f6ff";ctx.lineWidth=2;
+  ctx.beginPath();ctx.moveTo(cue.x,cue.y);
+  ctx.lineTo(cue.x+Math.cos(angle)*650,
+             cue.y+Math.sin(angle)*650);ctx.stroke();
+  ctx.setLineDash([]);
+  ctx.strokeStyle="#ffe26b";
+  ctx.beginPath();ctx.moveTo(target.x,target.y);
+  ctx.lineTo(target.x+Math.cos(angle)*120,
+             target.y+Math.sin(angle)*120);ctx.stroke();
+  ctx.restore();
+ }
+ ball(cue);ball(target,"#ef4444");
+}
+function ball(b,color="#ffffff"){
+ ctx.beginPath();ctx.arc(b.x,b.y,b.r,0,Math.PI*2);
+ ctx.fillStyle=color;ctx.fill();
+ ctx.strokeStyle="#ffffffaa";ctx.stroke();
+}
+function shoot(){
+ if(!aiming)autoAim();
+ const power=Number(document.querySelector("#power").value)/14;
+ cue.vx=Math.cos(angle)*power;
+ cue.vy=Math.sin(angle)*power;
+ document.querySelector("#info").textContent="Simulating shot...";
+ animate();
+}
+function animate(){
+ if(anim)cancelAnimationFrame(anim);
+ function frame(){
+  cue.x+=cue.vx;cue.y+=cue.vy;
+  cue.vx*=0.985;cue.vy*=0.985;
+  if(cue.x<33||cue.x>567)cue.vx*=-1;
+  if(cue.y<33||cue.y>307)cue.vy*=-1;
+  cue.x=Math.max(33,Math.min(567,cue.x));
+  cue.y=Math.max(33,Math.min(307,cue.y));
+  const dx=target.x-cue.x,dy=target.y-cue.y;
+  const d=Math.hypot(dx,dy);
+  if(d<20&&d>0){
+   target.vx=dx/d*Math.hypot(cue.vx,cue.vy)*0.8;
+   target.vy=dy/d*Math.hypot(cue.vx,cue.vy)*0.8;
+   cue.vx*=-0.2;cue.vy*=-0.2;
+  }
+  target.x+=target.vx;target.y+=target.vy;
+  target.vx*=0.98;target.vy*=0.98;
+  if(target.x<33||target.x>567)target.vx*=-1;
+  if(target.y<33||target.y>307)target.vy*=-1;
+  draw();
+  if(Math.hypot(cue.vx,cue.vy)+Math.hypot(target.vx,target.vy)>.15){
+   anim=requestAnimationFrame(frame);
+  }else{
+   anim=null;
+   document.querySelector("#info").textContent="Simulation complete";
+  }
+ }
+ anim=requestAnimationFrame(frame);
+}
+cv.addEventListener("pointerdown",e=>{
+ const r=cv.getBoundingClientRect();
+ const x=(e.clientX-r.left)*600/r.width;
+ const y=(e.clientY-r.top)*340/r.height;
+ if(Math.hypot(x-cue.x,y-cue.y)<35){
+  cue.x=x;cue.y=y;aiming=false;draw();
+ }
+});
+resetGame();
+</script>
+</body>
+</html>
